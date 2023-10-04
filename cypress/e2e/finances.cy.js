@@ -10,7 +10,7 @@ describe("Transações", () => {
   });
 
   it("Cadastrar uma entrada", () => {
-    criarTransacao("Freelance", "1500");
+    criarTransacao("Freelance", "150");
 
     cy.get("tbody tr td.description").should("have.text", "Freelance");
   });
@@ -20,11 +20,10 @@ describe("Transações", () => {
     cy.get("tbody tr td.description").should("have.text", "Cinema");
   });
 
-  it.only("Excluir transação", () => {
-    criarTransacao("Freelance", "1500");
+  it("Excluir transação", () => {
+    criarTransacao("Freelance", "150");
     criarTransacao("Mesada", "150");
-
-    //cy.contains(".description", "Freelance") // td refere
+    //cy.contains(".description", "Freelance") // td --> referencia
     //.parent() // tr
     //.find("img") // elemento que  a gente pre
     //.click();
